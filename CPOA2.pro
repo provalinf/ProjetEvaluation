@@ -37,3 +37,10 @@ FORMS += \
         mainwindow.ui
 
 LIBS += -LC:\wamp64\bin\mysql\mysql5.7.19\lib -llibmysql
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../Desktop/lib/ -llibmysql
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../Desktop/lib/ -llibmysqld
+else:unix: LIBS += -L$$PWD/../../Desktop/lib/ -llibmysql
+
+INCLUDEPATH += $$PWD/../../Desktop
+DEPENDPATH += $$PWD/../../Desktop
