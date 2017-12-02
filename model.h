@@ -26,7 +26,7 @@ class model
 		model();
 		~model();
 		bool checkUser(QString login, QString password);
-		QSqlQueryModel* getCoursInscrits();
+        QSqlQueryModel* getCoursInscrits();
 };
 
 #endif // MODEL_H

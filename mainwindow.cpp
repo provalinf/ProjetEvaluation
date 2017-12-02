@@ -17,8 +17,8 @@ void MainWindow::on_connectButton_clicked()
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
 	if(model1->checkUser(login, password)){
-		QSqlQueryModel* pointeur = model1->getCoursInscrits();
-		ui->tableViewCoursInscrits->setModel(pointeur);
+        ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
+        ui->stackedWidget->setCurrentIndex(1);
 	}
 }
 

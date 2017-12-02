@@ -68,14 +68,14 @@ bool model::checkUser(QString login, QString password) {
 }
 
 QSqlQueryModel* model::getCoursInscrits(){
-	QSqlQueryModel* res = new QSqlQueryModel();
+    QSqlQueryModel* res = new QSqlQueryModel();
 	database.open();
-	QSqlQuery* qry = new QSqlQuery();
+    QSqlQuery* qry = new QSqlQuery();
 	qry->prepare("SELECT * FROM courses");
 	qry->exec();
 	//database.close();
-	res->setQuery(*qry);
-	return res;
+    res->setQuery(* qry);
+    return res;
 }
 
 model::~model() {
