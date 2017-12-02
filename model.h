@@ -3,6 +3,7 @@
 #include <QString>
 #include <QtSql>
 #include <QDebug>
+#include <QtWidgets>
 
 struct dbConfig {
 		QString hostname;
@@ -24,7 +25,8 @@ class model
 		void loadParamsDatabase();
 		model();
 		~model();
-		void checkUser(QString login, QString password);
+		bool checkUser(QString login, QString password);
+		QSqlQueryModel* getCoursInscrits();
 };
 
 #endif // MODEL_H

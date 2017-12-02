@@ -1,5 +1,6 @@
 #include "model.h"
 
+
 model::model()
 {
 	loadParamsDatabase();
@@ -38,7 +39,7 @@ void model::loadParamsDatabase() {
 	}
 }
 
-void model::checkUser(QString login, QString password) {
+bool model::checkUser(QString login, QString password) {
 	QSqlQuery query;
 	database.open();
 	query.prepare("SELECT * FROM users WHERE login=:login AND password=:password");
@@ -49,10 +50,12 @@ void model::checkUser(QString login, QString password) {
 		if (query.size() == 1) {
 			//connexion au site
 			qDebug() << "Login et mot de passe correct";
+			return true;
 			/*qDebug() << "Number of Rows: " << query.size();
 			qDebug() << "Number of columns: " << query.record().count();
 			query.first();
 			qDebug() << "test : " << query.value(1).toString();*/
+
 		} else {
 			qDebug() << "Login et mot de passe incorrect";
 		}
@@ -61,6 +64,18 @@ void model::checkUser(QString login, QString password) {
 	else{
 		qDebug() << "Erreur d'execution";
 	}
+	return false;
+}
+
+QSqlQueryModel* model::getCoursInscrits(){
+	QSqlQueryModel* res = new QSqlQueryModel();
+	database.open();
+	QSqlQuery* qry = new QSqlQuery();
+	qry->prepare("SELECT * FROM courses");
+	qry->exec();
+	//database.close();
+	res->setQuery(*qry);
+	return res;
 }
 
 model::~model() {

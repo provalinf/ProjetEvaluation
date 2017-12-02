@@ -16,12 +16,19 @@ void MainWindow::on_connectButton_clicked()
 {
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
-	model1->checkUser(login, password);
-
+	if(model1->checkUser(login, password)){
+		QSqlQueryModel* pointeur = model1->getCoursInscrits();
+		ui->tableViewCoursInscrits->setModel(pointeur);
+	}
 }
 
 void MainWindow::on_resetButton_clicked()
 {
 	ui->loginTB->clear();
 	ui->passwordTB->clear();
+}
+
+void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
+{
+
 }
