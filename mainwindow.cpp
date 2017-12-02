@@ -1,12 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
-#include "model.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-	QMainWindow(parent),
-	ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+	model1 = new model();
 	ui->setupUi(this);
 }
 
@@ -17,7 +14,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_connectButton_clicked()
 {
-	model *model1 = new model();
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
 	model1->checkUser(login, password);

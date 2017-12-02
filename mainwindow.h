@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "model.h"
+
 namespace Ui {
 	class MainWindow;
 }
@@ -21,6 +23,7 @@ class MainWindow : public QMainWindow
 		void on_resetButton_clicked();
 
 	private:
+		model *model1;
 		Ui::MainWindow *ui;
 };
 
