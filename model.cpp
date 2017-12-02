@@ -40,11 +40,17 @@ void model::loadParamsDatabase() {
 }
 
 bool model::checkUser(QString login, QString password) {
+    // Conversion en string pour hachage puis hachage du mot de passe
+    std::string hashed_str = sha512(password.toUtf8().constData());
+    QString hashed_password = QString::fromStdString(hashed_str);
+
+    //qDebug() << hashed_password;
+
 	QSqlQuery query;
 	database.open();
 	query.prepare("SELECT * FROM users WHERE login=:login AND password=:password");
 	query.bindValue(":login", login);
-	query.bindValue(":password", password);
+    query.bindValue(":password", hashed_password);
 
 	if(query.exec()){
 		if (query.size() == 1) {

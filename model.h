@@ -4,6 +4,12 @@
 #include <QtSql>
 #include <QDebug>
 #include <QtWidgets>
+#include <iostream>
+#include "sha512.h"
+
+using std::string;
+using std::cout;
+using std::endl;
 
 struct dbConfig {
 		QString hostname;
