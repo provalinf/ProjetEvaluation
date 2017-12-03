@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
-#include "model.h"
+#include "loadmodel.h"
+#include "users.h"
+#include "courses.h"
 
 namespace Ui {
 	class MainWindow;
@@ -33,7 +35,7 @@ class MainWindow : public QMainWindow
 		void on_toolButtonChooser_clicked();
 
 	private:
-		model *model1;
+		loadmodel *lmodel;
 		Ui::MainWindow *ui;
 };
 

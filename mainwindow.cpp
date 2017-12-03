@@ -3,7 +3,7 @@
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
-	model1 = new model();
+	lmodel = new loadmodel();
 	ui->setupUi(this);
 }
 
@@ -16,16 +16,16 @@ void MainWindow::on_connectButton_clicked()
 {
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
-	if(model1->checkUser(login, password)){
-		if(model1->getStatus() == "Administrateur"){
+	if(lmodel->getUsers()->checkAndDefinedUser(login, password)){
+		if(lmodel->getUsers()->getStatus() == "Administrateur"){
 			//ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
 			ui->stackedWidget->setCurrentIndex(5);
 		}
-		else if(model1->getStatus() == "Etudiant"){
-			ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
+		else if(lmodel->getUsers()->getStatus() == "Etudiant"){
+			ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
 			ui->stackedWidget->setCurrentIndex(1);
 		}
-		else if(model1->getStatus() == "Professeur"){
+		else if(lmodel->getUsers()->getStatus() == "Professeur"){
 			//ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
 			ui->stackedWidget->setCurrentIndex(2);
 		}
