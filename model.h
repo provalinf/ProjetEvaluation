@@ -18,6 +18,7 @@ class model
 		const QString databaseSettings = "config.ini";
 
 		QString login;
+		QString status;
 		dbConfig dbConf;
 
 		QSqlDatabase database;
@@ -27,6 +28,7 @@ class model
 		~model();
 		bool checkUser(QString login, QString password);
         QSqlQueryModel* getCoursInscrits();
+		QString getStatus();
 };
 
 #endif // MODEL_H

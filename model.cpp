@@ -50,11 +50,11 @@ bool model::checkUser(QString login, QString password) {
 		if (query.size() == 1) {
 			//connexion au site
 			qDebug() << "Login et mot de passe correct";
-			return true;
-			/*qDebug() << "Number of Rows: " << query.size();
-			qDebug() << "Number of columns: " << query.record().count();
+			//qDebug() << "Number of Rows: " << query.size();
+			//qDebug() << "Number of columns: " << query.record().count();
 			query.first();
-			qDebug() << "test : " << query.value(1).toString();*/
+			status = query.value(3).toString();
+			return true;
 
 		} else {
 			qDebug() << "Login et mot de passe incorrect";
@@ -77,6 +77,20 @@ QSqlQueryModel* model::getCoursInscrits(){
     res->setQuery(* qry);
     return res;
 }
+
+QString model::getStatus(){
+	return status;
+}
+
+
+
+
+
+
+
+
+
+
 
 model::~model() {
 	database.close();

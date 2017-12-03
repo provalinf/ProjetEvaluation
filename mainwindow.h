@@ -22,7 +22,15 @@ class MainWindow : public QMainWindow
 
 		void on_resetButton_clicked();
 
-		void on_tableView_doubleClicked(const QModelIndex &index);
+		void on_reset_clicked();
+
+		void on_addRessource_clicked();
+
+		void on_pushButton_clicked();
+
+		void on_tableViewCoursInscrits_doubleClicked(const QModelIndex &index);
+
+		void on_toolButtonChooser_clicked();
 
 	private:
 		model *model1;
