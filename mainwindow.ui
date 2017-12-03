@@ -17,16 +17,16 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>10</y>
-      <width>621</width>
+      <width>631</width>
       <height>391</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>6</number>
     </property>
-    <widget class="QWidget" name="page">
+    <widget class="QWidget" name="Connexion">
      <widget class="QPushButton" name="resetButton">
       <property name="geometry">
        <rect>
@@ -102,8 +102,21 @@
        <string>Mot de passe : </string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>10</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Page de connexion</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="page_2">
+    <widget class="QWidget" name="CoursInscrits">
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
@@ -134,7 +147,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_3">
+    <widget class="QWidget" name="ProposerCours">
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
@@ -251,7 +264,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_4">
+    <widget class="QWidget" name="CoursDisponibles">
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
@@ -276,7 +289,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_5">
+    <widget class="QWidget" name="AjouterRessource">
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
@@ -300,6 +313,9 @@
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_2">
+       <property name="bottomMargin">
+        <number>6</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_13">
          <property name="text">
@@ -310,24 +326,34 @@
        <item row="0" column="1">
         <widget class="QComboBox" name="comboBoxTypeRessource"/>
        </item>
-       <item row="1" column="1">
+       <item row="2" column="1">
         <widget class="QToolButton" name="toolButtonChooser">
          <property name="text">
           <string>...</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QLabel" name="label_14">
          <property name="text">
           <string>Choisir fichier : </string>
          </property>
         </widget>
        </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="nomFichier">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_6">
+    <widget class="QWidget" name="CoursAttenteDeValidation">
      <widget class="QTableView" name="tableViewCoursEnAttente">
       <property name="geometry">
        <rect>
@@ -349,6 +375,130 @@
       </property>
       <property name="text">
        <string>Liste des cours en attente de validation</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="AfficherCours">
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>0</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cours : </string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>40</y>
+        <width>291</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="nomCours_2">
+         <property name="text">
+          <string>Nom : </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Enseignant : </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Domaine :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Date fin :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>Places restantes :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QProgressBar" name="progressBar">
+         <property name="value">
+          <number>24</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QDateTimeEdit" name="dateTimeEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="domaine">
+         <property name="text">
+          <string>dom</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="enseignant">
+         <property name="text">
+          <string>enseign</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="nom">
+         <property name="text">
+          <string>nom</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>Dépot :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QToolButton" name="deposer">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="desinscrire">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>280</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Se désinscrire</string>
       </property>
      </widget>
     </widget>

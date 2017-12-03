@@ -36,6 +36,10 @@ class MainWindow : public QMainWindow
 
 		void on_actionSe_d_connecter_triggered();
 
+		void on_comboBoxTypeRessource_activated(const QString &arg1);
+
+		void on_deposer_clicked();
+
 	private:
 		loadmodel *lmodel;
 		Ui::MainWindow *ui;

@@ -66,7 +66,13 @@ void MainWindow::on_tableViewCoursInscrits_doubleClicked(const QModelIndex &inde
 
 void MainWindow::on_toolButtonChooser_clicked()
 {
-	//QFileDialog.exec();
+	QFileDialog file;
+	//file.exec();
+	QFileInfo name;
+	name = file.getOpenFileName();
+	ui->nomFichier->setText(name.baseName());
+	ui->nomFichier->setEnabled(true);
+	//qDebug() <<file.getOpenFileUrl();
 }
 
 void MainWindow::on_actionSe_d_connecter_triggered()
@@ -74,4 +80,15 @@ void MainWindow::on_actionSe_d_connecter_triggered()
 	ui->stackedWidget->setCurrentIndex(0);
 	ui->loginTB->clear();
 	ui->passwordTB->clear();
+}
+
+void MainWindow::on_comboBoxTypeRessource_activated(const QString &arg1)
+{
+
+}
+
+void MainWindow::on_deposer_clicked()
+{
+	QDrag *drag =new QDrag(this);
+	drag->exec();
 }
