@@ -14,19 +14,20 @@ bool users::checkAndDefinedUser(QString login, QString password) {
 	std::string hashed_str = sha512(password.toUtf8().constData());
 	QString hashed_password = QString::fromStdString(hashed_str);
 
-	query.prepare("SELECT id FROM users WHERE login=:login AND password=:password");
+	query.prepare("SELECT * FROM users WHERE login=:login AND password=:password");
 	query.bindValue(":login", login);
 	query.bindValue(":password", hashed_password);
 
 	if(query.exec()){
 		if (query.size() == 1) {
 			//connexion au site
-			qDebug() << "Login et mot de passe correct";
-			/*qDebug() << "Number of Rows: " << query.size();
-			qDebug() << "Number of columns: " << query.record().count();
+			//qDebug() << "Login et mot de passe correct";
+			//qDebug() << "Number of Rows: " << query.size();
+			//qDebug() << "Number of columns: " << query.record().count();
 			query.first();
-			qDebug() << "test : " << query.value(1).toString();*/
+			//qDebug() << "test : " << query.value(1).toString();*/
 			defineUserConnect(query.value(0).toInt());
+			status = query.value(3).toString();
 			qDebug() << query.value(0).toInt();
 			return true;
 		} else {
@@ -44,6 +45,10 @@ bool users::checkAndDefinedUser(QString login, QString password) {
 void users::defineUserConnect(int idUser) {
 	idUserConnect = idUser;
 	setConnected();
+}
+
+QString users::getStatus(){
+	return status;
 }
 
 void users::setConnected() {
