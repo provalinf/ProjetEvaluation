@@ -23,6 +23,8 @@ class users : public model
 		void defineUserConnect(int idUser);
 		void setConnected();
 		QString getStatus();
+
+	int getIdUser();
 };
 
 #endif // USERS_H

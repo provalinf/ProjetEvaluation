@@ -60,6 +60,10 @@ void users::setDisconnected() {
 	idUserConnect = -1;
 }
 
+int users::getIdUser(){
+	return idUserConnect;
+}
+
 users::~users() {
 	database->close();
 }

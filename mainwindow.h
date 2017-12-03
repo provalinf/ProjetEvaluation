@@ -28,13 +28,13 @@ class MainWindow : public QMainWindow
 
 		void on_addRessource_clicked();
 
-		void on_pushButton_clicked();
-
 		void on_tableViewCoursInscrits_doubleClicked(const QModelIndex &index);
 
 		void on_toolButtonChooser_clicked();
 
 		void on_actionSe_d_connecter_triggered();
+
+		void on_proposerCours_clicked();
 
 	private:
 		loadmodel *lmodel;
