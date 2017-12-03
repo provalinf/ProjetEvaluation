@@ -2,6 +2,12 @@
 #define USERS_H
 #include <QtSql>
 #include "model.h"
+#include <iostream>
+#include "sha512.h"
+
+using std::string;
+using std::cout;
+using std::endl;
 
 class users : public model
 {
