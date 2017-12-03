@@ -61,7 +61,6 @@ void MainWindow::on_toolButtonChooser_clicked()
 	ui->nomFichier->setText(name.baseName());
 	ui->nomFichier->setEnabled(true);
 	//qDebug() <<file.getOpenFileUrl();
-void MainWindow::on_toolButtonChooser_clicked() {
 	//QFileDialog.exec();
 }
 
