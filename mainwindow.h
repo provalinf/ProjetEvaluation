@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
-#include "model.h"
+#include "loadmodel.h"
+#include "users.h"
+#include "courses.h"
 
 namespace Ui {
 	class MainWindow;
@@ -25,7 +27,7 @@ class MainWindow : public QMainWindow
 		void on_tableView_doubleClicked(const QModelIndex &index);
 
 	private:
-		model *model1;
+		loadmodel *lmodel;
 		Ui::MainWindow *ui;
 };
 

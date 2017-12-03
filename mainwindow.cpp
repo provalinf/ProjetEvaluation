@@ -3,7 +3,7 @@
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
-	model1 = new model();
+	lmodel = new loadmodel();
 	ui->setupUi(this);
 }
 
@@ -16,9 +16,11 @@ void MainWindow::on_connectButton_clicked()
 {
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
-	if(model1->checkUser(login, password)){
-        ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
+	if(lmodel->getUsers()->checkAndDefinedUser(login, password)){
+		ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
         ui->stackedWidget->setCurrentIndex(1);
+	} else {
+		// Popup mot de passe incorrect
 	}
 }
 
