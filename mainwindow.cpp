@@ -50,7 +50,7 @@ void MainWindow::on_reset_clicked()
 
 void MainWindow::on_addRessource_clicked()
 {
-	ui->stackedWidget->setCurrentIndex(5);
+	ui->stackedWidget->setCurrentIndex(4);
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -67,4 +67,11 @@ void MainWindow::on_tableViewCoursInscrits_doubleClicked(const QModelIndex &inde
 void MainWindow::on_toolButtonChooser_clicked()
 {
 	//QFileDialog.exec();
+}
+
+void MainWindow::on_actionSe_d_connecter_triggered()
+{
+	ui->stackedWidget->setCurrentIndex(0);
+	ui->loginTB->clear();
+	ui->passwordTB->clear();
 }

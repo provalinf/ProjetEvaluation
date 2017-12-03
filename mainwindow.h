@@ -34,6 +34,8 @@ class MainWindow : public QMainWindow
 
 		void on_toolButtonChooser_clicked();
 
+		void on_actionSe_d_connecter_triggered();
+
 	private:
 		loadmodel *lmodel;
 		Ui::MainWindow *ui;

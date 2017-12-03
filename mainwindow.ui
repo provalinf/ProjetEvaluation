@@ -72,6 +72,9 @@
         <height>20</height>
        </rect>
       </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
      </widget>
      <widget class="QPushButton" name="connectButton">
       <property name="geometry">
@@ -351,6 +354,28 @@
     </widget>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>590</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionSe_d_connecter"/>
+   </widget>
+   <addaction name="menuFichier"/>
+  </widget>
+  <action name="actionSe_d_connecter">
+   <property name="text">
+    <string>Se déconnecter</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
