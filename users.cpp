@@ -27,7 +27,7 @@ bool users::checkAndDefinedUser(QString login, QString password) {
 			query.first();
 			//qDebug() << "test : " << query.value(1).toString();*/
 			defineUserConnect(query.value(0).toInt());
-			status = query.value(3).toString();
+			status = query.value(3).toInt();
 			qDebug() << query.value(0).toInt();
 			return true;
 		} else {
@@ -47,7 +47,7 @@ void users::defineUserConnect(int idUser) {
 	setConnected();
 }
 
-QString users::getStatus(){
+int users::getStatus(){
 	return status;
 }
 
