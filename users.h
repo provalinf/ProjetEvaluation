@@ -13,7 +13,7 @@ class users : public model
 {
 	int idUserConnect;
 	bool connected;
-	QString status;
+	int status;
 	public:
 		void setDisconnected();
 		users(QSqlDatabase* database);
@@ -22,7 +22,7 @@ class users : public model
 		bool checkAndDefinedUser(QString login, QString password);
 		void defineUserConnect(int idUser);
 		void setConnected();
-		QString getStatus();
+		int getStatus();
 
 	int getIdUser();
 };

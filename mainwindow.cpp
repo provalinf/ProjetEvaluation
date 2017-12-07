@@ -16,13 +16,13 @@ void MainWindow::on_connectButton_clicked() {
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
 	if (lmodel->getUsers()->checkAndDefinedUser(login, password)) {
-		if (lmodel->getUsers()->getStatus() == "Administrateur") {
+		if (lmodel->getUsers()->getStatus() == 0) {
 			//ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
 			ui->stackedWidget->setCurrentIndex(5);
-		} else if (lmodel->getUsers()->getStatus() == "Etudiant") {
+		} else if (lmodel->getUsers()->getStatus() == 2) {
 			ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
 			ui->stackedWidget->setCurrentIndex(1);
-		} else if (lmodel->getUsers()->getStatus() == "Professeur") {
+		} else if (lmodel->getUsers()->getStatus() == 1) {
 			//ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
 			ui->stackedWidget->setCurrentIndex(2);
 		} else
@@ -74,8 +74,10 @@ void MainWindow::on_comboBoxTypeRessource_activated(const QString &arg1) {
 }
 
 void MainWindow::on_deposer_clicked() {
-	QDrag *drag = new QDrag(this);
-	drag->exec();
+//	QDrag *drag =new QDrag(this);
+//	QMimeData *mimeData = new QMimeData;
+//	mimeData->setData();
+//	drag->exec();
 }
 
 void MainWindow::on_proposerCours_clicked() {
