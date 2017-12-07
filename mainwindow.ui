@@ -17,16 +17,16 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
+      <x>0</x>
+      <y>0</y>
       <width>631</width>
-      <height>391</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="Connexion">
+    <widget class="QWidget" name="Connexion0">
      <widget class="QPushButton" name="resetButton">
       <property name="geometry">
        <rect>
@@ -116,24 +116,24 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="CoursInscrits">
+    <widget class="QWidget" name="CoursInscrits1">
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>240</x>
         <y>10</y>
         <width>121</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Liste des cours inscrits</string>
+       <string>Liste des cours suivis</string>
       </property>
      </widget>
      <widget class="QTableView" name="tableViewCoursInscrits">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>30</x>
         <y>50</y>
         <width>521</width>
         <height>261</height>
@@ -147,7 +147,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="ProposerCours">
+    <widget class="QWidget" name="ProposerCours2">
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
@@ -264,7 +264,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="CoursDisponibles">
+    <widget class="QWidget" name="CoursDisponibles3">
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
@@ -281,15 +281,15 @@
      <widget class="QTableView" name="tableViewCoursDispo">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>30</x>
         <y>50</y>
-        <width>551</width>
+        <width>521</width>
         <height>251</height>
        </rect>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="AjouterRessource">
+    <widget class="QWidget" name="AjouterRessource4">
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
@@ -353,12 +353,12 @@
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="CoursAttenteDeValidation">
+    <widget class="QWidget" name="CoursAttenteDeValidation5">
      <widget class="QTableView" name="tableViewCoursEnAttente">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>70</y>
+        <x>60</x>
+        <y>60</y>
         <width>471</width>
         <height>251</height>
        </rect>
@@ -367,7 +367,7 @@
      <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>190</x>
         <y>30</y>
         <width>191</width>
         <height>16</height>
@@ -378,7 +378,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="AfficherCours">
+    <widget class="QWidget" name="AfficherCours6">
      <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
@@ -499,6 +499,141 @@
       </property>
       <property name="text">
        <string>Se désinscrire</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="AccueilEtudiant7">
+     <widget class="QLabel" name="helloEtudiant">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>0</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bonjour</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="coursDispo">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>110</y>
+        <width>171</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher les cours disponibles</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="coursSuivis">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>110</y>
+        <width>171</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Consulter mes cours</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="AccueilProf8">
+     <widget class="QLabel" name="helloProf">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>40</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bonjour</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="listeCours">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>140</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher la liste des cours</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="proposeCours">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>140</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Proposer un cours</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="AccueilAdministrateur9">
+     <widget class="QLabel" name="helloAdmin">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>20</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bonjour</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="coursAttente">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>110</y>
+        <width>241</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Liste des cours en attente de validation</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="CoursProf10">
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>30</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Liste de vos cours</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="coursProf">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>521</width>
+        <height>251</height>
+       </rect>
       </property>
      </widget>
     </widget>

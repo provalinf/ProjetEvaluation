@@ -16,17 +16,25 @@ void MainWindow::on_connectButton_clicked() {
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
 	if (lmodel->getUsers()->checkAndDefinedUser(login, password)) {
-		if (lmodel->getUsers()->getStatus() == 0) {
-			//ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
-			ui->stackedWidget->setCurrentIndex(5);
-		} else if (lmodel->getUsers()->getStatus() == 2) {
+		switch (lmodel->getUsers()->getStatus()) {
+		case 0:
+			qDebug() << "Administrateur";
+			ui->helloAdmin->setText("Bonjour "+login+ " !");
+			ui->stackedWidget->setCurrentIndex(9);
+			break;
+		case 1:
+			qDebug() << "Professeur";
+			ui->helloProf->setText("Bonjour "+login+ " !");
+			ui->stackedWidget->setCurrentIndex(8);
+		case 2:
+			qDebug() << "Etudiant";
 			ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
-			ui->stackedWidget->setCurrentIndex(1);
-		} else if (lmodel->getUsers()->getStatus() == 1) {
-			//ui->tableViewCoursInscrits->setModel(model1->getCoursInscrits());
-			ui->stackedWidget->setCurrentIndex(2);
-		} else
+			ui->helloEtudiant->setText("Bonjour "+login+ " !");
+			ui->stackedWidget->setCurrentIndex(7);
+		default:
 			qDebug() << "Aucun statut";
+			break;
+		}
 	}
 }
 
@@ -123,4 +131,29 @@ void MainWindow::on_proposerCours_clicked() {
 			q->setStyleSheet("background-color: none;");
 		}*/
 	}
+}
+
+void MainWindow::on_coursSuivis_clicked()
+{
+	 ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_coursDispo_clicked()
+{
+	 ui->stackedWidget->setCurrentIndex(3);
+}
+
+void MainWindow::on_proposeCours_clicked()
+{
+	ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_coursAttente_clicked()
+{
+	ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_listeCours_clicked()
+{
+	ui->stackedWidget->setCurrentIndex(10);
 }

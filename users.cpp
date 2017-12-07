@@ -28,7 +28,6 @@ bool users::checkAndDefinedUser(QString login, QString password) {
 			//qDebug() << "test : " << query.value(1).toString();*/
 			defineUserConnect(query.value(0).toInt());
 			status = query.value(3).toInt();
-			qDebug() << query.value(0).toInt();
 			return true;
 		} else {
 			qDebug() << "Login et mot de passe incorrect";

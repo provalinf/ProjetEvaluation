@@ -40,6 +40,16 @@ class MainWindow : public QMainWindow
 
 		void on_deposer_clicked();
 
+		void on_coursSuivis_clicked();
+
+		void on_coursDispo_clicked();
+
+		void on_proposeCours_clicked();
+
+		void on_coursAttente_clicked();
+
+		void on_listeCours_clicked();
+
 	private:
 		loadmodel *lmodel;
 		Ui::MainWindow *ui;
