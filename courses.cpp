@@ -49,8 +49,8 @@ QList<QString> courses::verifInfoCours(QHash<QString, QString> fields) {
 
 	// Ajouter vérification domaine
 
-	fields.find("debDate")->isEmpty();
-	fields.find("debDate")->isEmpty();
+	if (fields.find("nbPlaces")->toInt() <= 0) erreurs.append("nbPlaces");
+
 	return erreurs;
 }
 
