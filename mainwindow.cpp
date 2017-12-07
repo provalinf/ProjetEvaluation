@@ -52,8 +52,7 @@ void MainWindow::on_tableViewCoursInscrits_doubleClicked(const QModelIndex &inde
 	qDebug() << index.data().toString();
 }
 
-void MainWindow::on_toolButtonChooser_clicked()
-{
+void MainWindow::on_toolButtonChooser_clicked() {
 	QFileDialog file;
 	//file.exec();
 	QFileInfo name;
@@ -70,14 +69,12 @@ void MainWindow::on_actionSe_d_connecter_triggered() {
 	ui->passwordTB->clear();
 }
 
-void MainWindow::on_comboBoxTypeRessource_activated(const QString &arg1)
-{
+void MainWindow::on_comboBoxTypeRessource_activated(const QString &arg1) {
 
 }
 
-void MainWindow::on_deposer_clicked()
-{
-	QDrag *drag =new QDrag(this);
+void MainWindow::on_deposer_clicked() {
+	QDrag *drag = new QDrag(this);
 	drag->exec();
 }
 
@@ -87,7 +84,7 @@ void MainWindow::on_proposerCours_clicked() {
 	fields.insert("debDate", ui->dateDebut);
 	fields.insert("finDate", ui->dateFin);
 	fields.insert("domaine", ui->comboBoxDomaine);
-	fields.insert("nbPlace", ui->nbPlaces);
+	fields.insert("nbPlaces", ui->nbPlaces);
 
 	QHash<QString, QString> stringList;
 	stringList.insert("name", ui->nomCours->text());
@@ -97,11 +94,13 @@ void MainWindow::on_proposerCours_clicked() {
 	stringList.insert("nbPlaces", ui->nbPlaces->text());
 
 	QList<QString> invalid = lmodel->getCourses()->verifInfoCours(stringList);
+
+	for (QWidget *&q : fields) {
+		q->setStyleSheet("background-color: none;");
+	}
+
 	if (invalid.isEmpty()) {
 		qDebug() << invalid << "valide";
-		for (QWidget *&q : fields) {
-			q->setStyleSheet("background-color: none;");
-		}
 
 		if (lmodel->getCourses()->addNewCours(stringList, lmodel->getUsers()->getIdUser())) {
 			ui->stackedWidget->setCurrentIndex(1);
@@ -110,15 +109,9 @@ void MainWindow::on_proposerCours_clicked() {
 		}
 	} else {
 		qDebug() << invalid << "invalide";
-		/*for (int i = 0; i < invalid.size(); ++i) {
-			QWidget *const q = fields.value(invalid.value(i));
+		for (int i = 0; i < invalid.size(); ++i) {
+			QWidget *&q = fields[invalid.value(i)];
 			q->setStyleSheet("background-color: rgb(255, 198, 198);");
-		 // A voir
-		}*/
-
-		/*for (QWidget *&q : fields) {
-
-			q->setStyleSheet("background-color: none;");
-		}*/
+		}
 	}
 }
