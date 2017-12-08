@@ -24,13 +24,13 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="Connexion0">
      <widget class="QPushButton" name="resetButton">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>330</x>
         <y>210</y>
         <width>75</width>
         <height>23</height>
@@ -79,7 +79,7 @@
      <widget class="QPushButton" name="connectButton">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>220</x>
         <y>210</y>
         <width>75</width>
         <height>23</height>
@@ -144,6 +144,19 @@
       </property>
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="return_coursInscrits">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Retour</string>
       </property>
      </widget>
     </widget>
@@ -263,6 +276,19 @@
        <string>Réinitialiser</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="return_proposerCours">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Retour</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="CoursDisponibles3">
      <widget class="QLabel" name="label_11">
@@ -286,6 +312,19 @@
         <width>521</width>
         <height>251</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="return_coursDisponibles">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Retour</string>
       </property>
      </widget>
     </widget>
@@ -375,6 +414,19 @@
       </property>
       <property name="text">
        <string>Liste des cours en attente de validation</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="return_coursAttenteDeValidation">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Retour</string>
       </property>
      </widget>
     </widget>
@@ -567,7 +619,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Afficher la liste des cours</string>
+       <string>Afficher la liste de vos cours</string>
       </property>
      </widget>
      <widget class="QPushButton" name="proposeCours">
@@ -634,6 +686,19 @@
         <width>521</width>
         <height>251</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="return_coursProf">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Retour</string>
       </property>
      </widget>
     </widget>

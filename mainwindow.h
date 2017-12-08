@@ -50,7 +50,21 @@ class MainWindow : public QMainWindow
 
 		void on_listeCours_clicked();
 
-	private:
+        void on_pushButton_clicked();
+
+        void on_pushButton_2_clicked();
+
+        void on_return_proposerCours_clicked();
+
+        void on_return_CoursInscrits_clicked();
+
+        void on_return_coursDisponibles_clicked();
+
+        void on_retour_coursProf_clicked();
+
+        void on_return_coursAttenteDeValidation_clicked();
+
+private:
 		loadmodel *lmodel;
 		Ui::MainWindow *ui;
 };

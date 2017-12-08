@@ -150,3 +150,28 @@ void MainWindow::on_listeCours_clicked()
 {
 	ui->stackedWidget->setCurrentIndex(10);
 }
+
+void MainWindow::on_return_proposerCours_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+}
+
+void MainWindow::on_return_coursDisponibles_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+}
+
+void MainWindow::on_return_coursAttenteDeValidation_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(9);
+}
+
+void MainWindow::on_return_coursProf_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+}
+
+void MainWindow::on_return_coursInscrits_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+}
