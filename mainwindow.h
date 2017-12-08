@@ -64,6 +64,10 @@ class MainWindow : public QMainWindow
 
         void on_return_coursAttenteDeValidation_clicked();
 
+        void on_return_coursProf_clicked();
+
+        void on_return_coursInscrits_clicked();
+
 private:
 		loadmodel *lmodel;
 		Ui::MainWindow *ui;
