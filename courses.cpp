@@ -21,6 +21,27 @@ QSqlQueryModel *courses::getCoursInscrits() {
 	return res;
 }
 
+QSqlQueryModel *courses::getCoursDispo() {
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    MainWindow* m =MainWindow::getInstance();
+    loadmodel* lmodel= m->getLModel();
+    users* user = lmodel->getUser();
+    int id = user->getIdUser();
+    qry->prepare("SELECT * FROM courses WHERE valide = 1 AND "
+                 "id_Course=(SELECT id_Course FROM registrations WHERE date_deb<NOW() AND "
+                 "date_fin>NOW() AND "
+                 "(id_Registration!=(SELECT id_Registration FROM register_students WHERE id_Student=?) OR "
+                 "NOT EXISTS (SELECT id_Registration FROM register_students WHERE id_Student=?)))");
+    qry->bindValue(0, id);
+    qry->bindValue(1, id);
+    qry->exec();
+    res->setQuery(*qry);
+    database->close();
+    return res;
+}
+
 bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	QSqlQuery qry;
 	database->open();

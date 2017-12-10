@@ -44,7 +44,6 @@ void MainWindow::on_connectButton_clicked() {
             break;
 		case 2:
 			qDebug() << "Etudiant";
-			ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
 			ui->helloEtudiant->setText("Bonjour "+login+ " !");
 			ui->stackedWidget->setCurrentIndex(7);
             break;
@@ -145,12 +144,14 @@ void MainWindow::on_proposerCours_clicked() {
 
 void MainWindow::on_coursSuivis_clicked()
 {
-	 ui->stackedWidget->setCurrentIndex(1);
+    ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_coursDispo_clicked()
 {
-	 ui->stackedWidget->setCurrentIndex(3);
+    ui->tableViewCoursDispo->setModel(lmodel->getCourses()->getCoursDispo());
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_proposeCours_clicked()
