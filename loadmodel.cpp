@@ -16,7 +16,7 @@ loadmodel::loadmodel()
 	cours = new courses(&database);
 }
 
-users* loadmodel::getUsers() {
+users* loadmodel::getUser() {
 	return utilisateur;
 }
 

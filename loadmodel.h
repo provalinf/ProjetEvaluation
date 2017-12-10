@@ -30,7 +30,7 @@ class loadmodel
 		loadmodel();
 		~loadmodel();
 
-		users* getUsers();
+        users* getUser();
 		courses* getCourses();
 };
 

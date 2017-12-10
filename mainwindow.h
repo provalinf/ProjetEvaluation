@@ -16,10 +16,14 @@ class MainWindow : public QMainWindow
 		Q_OBJECT
 
 	public:
-		explicit MainWindow(QWidget *parent = 0);
-		~MainWindow();
-
+        static MainWindow* getInstance();
+        ~MainWindow();
+    private:
+        static MainWindow* instance;
+        explicit MainWindow(QWidget *parent = 0);
 	private slots:
+        loadmodel* getLModel();
+
 		void on_connectButton_clicked();
 
 		void on_resetButton_clicked();

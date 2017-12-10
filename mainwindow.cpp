@@ -3,11 +3,20 @@
 #include <QDebug>
 #include <QList>
 
+MainWindow* MainWindow::instance = NULL;
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
 	lmodel = new loadmodel();
 	ui->setupUi(this);
     /* Toujours demarrer l'application sur la page de connexion */
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+MainWindow* MainWindow::getInstance(){
+    if(instance == NULL){
+        instance = new MainWindow;
+    }
+    return instance;
 }
 
 MainWindow::~MainWindow() {
@@ -17,8 +26,8 @@ MainWindow::~MainWindow() {
 void MainWindow::on_connectButton_clicked() {
 	QString login = ui->loginTB->text();
 	QString password = ui->passwordTB->text();
-	if (lmodel->getUsers()->checkAndDefinedUser(login, password)) {
-		switch (lmodel->getUsers()->getStatus()) {
+    if (lmodel->getUser()->checkAndDefinedUser(login, password)) {
+        switch (lmodel->getUser()->getStatus()) {
 		case 0:
 			qDebug() << "Administrateur";
 			ui->helloAdmin->setText("Bonjour "+login+ " !");
@@ -40,6 +49,10 @@ void MainWindow::on_connectButton_clicked() {
 			break;
 		}
 	}
+}
+
+loadmodel* MainWindow::getLModel(){
+    return lmodel;
 }
 
 void MainWindow::on_resetButton_clicked() {
@@ -116,7 +129,7 @@ void MainWindow::on_proposerCours_clicked() {
 	if (invalid.isEmpty()) {
 		qDebug() << invalid << "valide";
 
-		if (lmodel->getCourses()->addNewCours(stringList, lmodel->getUsers()->getIdUser())) {
+        if (lmodel->getCourses()->addNewCours(stringList, lmodel->getUser()->getIdUser())) {
 			ui->stackedWidget->setCurrentIndex(1);
 		} else {
 			// Popup erreur insertion
