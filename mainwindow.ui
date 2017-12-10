@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>590</width>
-    <height>364</height>
+    <height>348</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>10</number>
     </property>
     <widget class="QWidget" name="Connexion0">
      <widget class="QPushButton" name="resetButton">
@@ -678,7 +678,7 @@
        <string>Liste de vos cours</string>
       </property>
      </widget>
-     <widget class="QTableView" name="coursProf">
+     <widget class="QTableView" name="tableViewCoursProf">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -734,6 +734,32 @@
   <tabstop>connectButton</tabstop>
   <tabstop>resetButton</tabstop>
   <tabstop>tableViewCoursInscrits</tabstop>
+  <tabstop>return_coursInscrits</tabstop>
+  <tabstop>nomCours</tabstop>
+  <tabstop>dateDebut</tabstop>
+  <tabstop>dateFin</tabstop>
+  <tabstop>comboBoxDomaine</tabstop>
+  <tabstop>nbPlaces</tabstop>
+  <tabstop>addRessource</tabstop>
+  <tabstop>proposerCours</tabstop>
+  <tabstop>reset</tabstop>
+  <tabstop>return_proposerCours</tabstop>
+  <tabstop>tableViewCoursDispo</tabstop>
+  <tabstop>return_coursDisponibles</tabstop>
+  <tabstop>comboBoxTypeRessource</tabstop>
+  <tabstop>toolButtonChooser</tabstop>
+  <tabstop>tableViewCoursEnAttente</tabstop>
+  <tabstop>return_coursAttenteDeValidation</tabstop>
+  <tabstop>dateTimeEdit</tabstop>
+  <tabstop>deposer</tabstop>
+  <tabstop>desinscrire</tabstop>
+  <tabstop>coursDispo</tabstop>
+  <tabstop>coursSuivis</tabstop>
+  <tabstop>listeCours</tabstop>
+  <tabstop>proposeCours</tabstop>
+  <tabstop>coursAttente</tabstop>
+  <tabstop>tableViewCoursProf</tabstop>
+  <tabstop>return_coursProf</tabstop>
  </tabstops>
  <resources/>
  <connections/>
