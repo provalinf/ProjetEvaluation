@@ -166,6 +166,7 @@ void MainWindow::on_coursAttente_clicked()
 
 void MainWindow::on_listeCours_clicked()
 {
+    ui->tableViewCoursProf->setModel(lmodel->getCourses()->getCoursProf());
 	ui->stackedWidget->setCurrentIndex(10);
 }
 

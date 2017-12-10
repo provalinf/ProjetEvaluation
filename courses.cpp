@@ -42,6 +42,22 @@ QSqlQueryModel *courses::getCoursDispo() {
     return res;
 }
 
+QSqlQueryModel *courses::getCoursProf() {
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    MainWindow* m =MainWindow::getInstance();
+    loadmodel* lmodel= m->getLModel();
+    users* user = lmodel->getUser();
+    int id = user->getIdUser();
+    qry->prepare("SELECT * FROM courses WHERE id_Author=:idAuthor");
+    qry->bindValue(":idAuthor", id);
+    qry->exec();
+    res->setQuery(*qry);
+    database->close();
+    return res;
+}
+
 bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	QSqlQuery qry;
 	database->open();
