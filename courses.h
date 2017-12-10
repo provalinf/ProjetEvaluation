@@ -18,6 +18,8 @@ public:
 
     QSqlQueryModel *getCoursAttenteValidation();
 
+    QSqlQueryModel *getAllDomains();
+
 	QList<QString> verifInfoCours(QHash<QString, QString> hash);
 
 	bool addNewCours(QHash<QString, QString> fields);

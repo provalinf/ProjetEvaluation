@@ -69,6 +69,17 @@ QSqlQueryModel *courses::getCoursAttenteValidation() {
     return res;
 }
 
+QSqlQueryModel *courses::getAllDomains(){
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    qry->prepare("SELECT * FROM domains");
+    qry->exec();
+    res->setQuery(*qry);
+    database->close();
+    return res;
+}
+
 bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	QSqlQuery qry;
 	database->open();

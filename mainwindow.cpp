@@ -63,7 +63,6 @@ void MainWindow::on_reset_clicked() {
 	ui->nomCours->clear();
 	ui->dateDebut->clear();
 	ui->dateFin->clear();
-	ui->comboBoxDomaine->clear();
 	ui->nbPlaces->clear();
 }
 
@@ -156,7 +155,12 @@ void MainWindow::on_coursDispo_clicked()
 
 void MainWindow::on_proposeCours_clicked()
 {
-	ui->stackedWidget->setCurrentIndex(2);
+    QSqlQueryModel* domainsQuery = lmodel->getCourses()->getAllDomains();
+    for(int i = 0; i < domainsQuery->rowCount(); ++i)
+    {
+        ui->comboBoxDomaine->addItem(domainsQuery->record(i).value(1).toString(),domainsQuery->record(i).value(0));
+    }
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_coursAttente_clicked()
