@@ -83,8 +83,8 @@ QSqlQueryModel *courses::getAllDomains(){
 bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	QSqlQuery qry;
 	database->open();
-	qry.prepare("INSERT INTO (name, date_deb, date_fin, nb_Place, id_Author, id_Domain)"
-						"VALUES (:name, :date_deb, :date_fin, :nb_Place, :id_Author, :id_Domain)\"");
+    qry.prepare("INSERT INTO courses (name, date_deb, date_fin, nb_Place, id_Author, id_Domain) "
+                "VALUES (:name, :date_deb, :date_fin, :nb_Place, :id_Author, :id_Domain)");
 	qry.bindValue(":name", fields.value("name"));
 	qry.bindValue(":date_deb", fields.value("debDate"));
 	qry.bindValue(":date_fin", fields.value("finDate"));

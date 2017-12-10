@@ -115,7 +115,7 @@ void MainWindow::on_proposerCours_clicked() {
 	stringList.insert("name", ui->nomCours->text());
 	stringList.insert("debDate", ui->dateDebut->dateTime().toString("yyyy-MM-dd hh:mm"));
 	stringList.insert("finDate", ui->dateFin->dateTime().toString("yyyy-MM-dd hh:mm"));
-	stringList.insert("domaine", QString::number(ui->comboBoxDomaine->currentIndex()));
+    stringList.insert("domaine", QString::number(ui->comboBoxDomaine->currentData().toInt()));
 	stringList.insert("nbPlaces", ui->nbPlaces->text());
 
 	QList<QString> invalid = lmodel->getCourses()->verifInfoCours(stringList);
@@ -128,9 +128,9 @@ void MainWindow::on_proposerCours_clicked() {
 		qDebug() << invalid << "valide";
 
         if (lmodel->getCourses()->addNewCours(stringList, lmodel->getUser()->getIdUser())) {
-			ui->stackedWidget->setCurrentIndex(1);
+            ui->stackedWidget->setCurrentIndex(8);
 		} else {
-			// Popup erreur insertion
+            qDebug() << "Pas envoyé à la BD";
 		}
 	} else {
 		qDebug() << invalid << "invalide";
