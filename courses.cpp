@@ -1,4 +1,5 @@
 #include "courses.h"
+#include "mainwindow.h"
 
 courses::courses(QSqlDatabase *database) : model(database) {
 
@@ -8,9 +9,13 @@ QSqlQueryModel *courses::getCoursInscrits() {
 	QSqlQueryModel *res = new QSqlQueryModel();
 	QSqlQuery *qry = new QSqlQuery();
 	database->open();
-	qry->prepare("SELECT * FROM courses");
+    MainWindow* m =MainWindow::getInstance();
+    loadmodel* lmodel= m->getLModel();
+    users* user = lmodel->getUser();
+    int id = user->getIdUser();
+    qry->prepare("SELECT * FROM courses WHERE id_Course=(SELECT id_Course FROM studies WHERE id_Student=:idStudent)");
+    qry->bindValue(":idStudent", id);
 	qry->exec();
-	//database.close();
 	res->setQuery(*qry);
 	database->close();
 	return res;

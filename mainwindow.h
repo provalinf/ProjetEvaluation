@@ -17,12 +17,12 @@ class MainWindow : public QMainWindow
 
 	public:
         static MainWindow* getInstance();
+        loadmodel* getLModel();
         ~MainWindow();
     private:
         static MainWindow* instance;
         explicit MainWindow(QWidget *parent = 0);
 	private slots:
-        loadmodel* getLModel();
 
 		void on_connectButton_clicked();
 
@@ -65,7 +65,7 @@ class MainWindow : public QMainWindow
         void on_return_coursInscrits_clicked();
 
 private:
-		loadmodel *lmodel;
+        loadmodel *lmodel;
 		Ui::MainWindow *ui;
 };
 

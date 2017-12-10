@@ -19,6 +19,10 @@ MainWindow* MainWindow::getInstance(){
     return instance;
 }
 
+loadmodel* MainWindow::getLModel(){
+    return lmodel;
+}
+
 MainWindow::~MainWindow() {
 	delete ui;
 }
@@ -49,10 +53,6 @@ void MainWindow::on_connectButton_clicked() {
 			break;
 		}
 	}
-}
-
-loadmodel* MainWindow::getLModel(){
-    return lmodel;
 }
 
 void MainWindow::on_resetButton_clicked() {
