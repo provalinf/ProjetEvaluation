@@ -6,6 +6,8 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
 	lmodel = new loadmodel();
 	ui->setupUi(this);
+    /* Toujours demarrer l'application sur la page de connexion */
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow() {
@@ -26,11 +28,13 @@ void MainWindow::on_connectButton_clicked() {
 			qDebug() << "Professeur";
 			ui->helloProf->setText("Bonjour "+login+ " !");
 			ui->stackedWidget->setCurrentIndex(8);
+            break;
 		case 2:
 			qDebug() << "Etudiant";
 			ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
 			ui->helloEtudiant->setText("Bonjour "+login+ " !");
 			ui->stackedWidget->setCurrentIndex(7);
+            break;
 		default:
 			qDebug() << "Aucun statut";
 			break;
