@@ -10,6 +10,8 @@ public:
 
 	~courses();
 
+    QSqlQueryModel *getCoursById(int id);
+
 	QSqlQueryModel *getCoursInscrits();
 
     QSqlQueryModel *getCoursDispo();

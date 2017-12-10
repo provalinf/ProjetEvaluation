@@ -32,7 +32,7 @@ class MainWindow : public QMainWindow
 
 		void on_addRessource_clicked();
 
-		void on_tableViewCoursInscrits_doubleClicked(const QModelIndex &index);
+        void on_tableViewCoursInscrits_doubleClicked();
 
 		void on_toolButtonChooser_clicked();
 

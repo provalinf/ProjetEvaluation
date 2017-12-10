@@ -5,6 +5,18 @@ courses::courses(QSqlDatabase *database) : model(database) {
 
 }
 
+QSqlQueryModel *courses::getCoursById(int id) {
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    qry->prepare("SELECT * FROM courses WHERE id_Course=:idCourse");
+    qry->bindValue(":idCourse", id);
+    qry->exec();
+    res->setQuery(*qry);
+    database->close();
+    return res;
+}
+
 QSqlQueryModel *courses::getCoursInscrits() {
 	QSqlQueryModel *res = new QSqlQueryModel();
 	QSqlQuery *qry = new QSqlQuery();

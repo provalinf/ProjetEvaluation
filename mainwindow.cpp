@@ -70,9 +70,12 @@ void MainWindow::on_addRessource_clicked() {
 	ui->stackedWidget->setCurrentIndex(4);
 }
 
-void MainWindow::on_tableViewCoursInscrits_doubleClicked(const QModelIndex &index) {
-	//QModelIndex val = ui->tableViewCoursInscrits;
-	qDebug() << index.data().toString();
+void MainWindow::on_tableViewCoursInscrits_doubleClicked() {
+    int id = ui->tableViewCoursInscrits->selectionModel()->selectedRows().value(0).data().toInt();
+    QSqlQueryModel* coursQuery = lmodel->getCourses()->getCoursById(id);
+    //qDebug() << coursQuery->record(2);
+    //ui->nom->setText(coursQuery->value('name'));
+    ui->stackedWidget->setCurrentIndex(6);
 }
 
 void MainWindow::on_toolButtonChooser_clicked() {
