@@ -16,6 +16,8 @@ public:
 
     QSqlQueryModel *getCoursProf();
 
+    QSqlQueryModel *getCoursAttenteValidation();
+
 	QList<QString> verifInfoCours(QHash<QString, QString> hash);
 
 	bool addNewCours(QHash<QString, QString> fields);

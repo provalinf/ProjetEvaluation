@@ -161,6 +161,7 @@ void MainWindow::on_proposeCours_clicked()
 
 void MainWindow::on_coursAttente_clicked()
 {
+    ui->tableViewCoursEnAttente->setModel(lmodel->getCourses()->getCoursAttenteValidation());
 	ui->stackedWidget->setCurrentIndex(5);
 }
 

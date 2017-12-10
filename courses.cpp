@@ -58,6 +58,17 @@ QSqlQueryModel *courses::getCoursProf() {
     return res;
 }
 
+QSqlQueryModel *courses::getCoursAttenteValidation() {
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    qry->prepare("SELECT * FROM courses WHERE valide IS NULL");
+    qry->exec();
+    res->setQuery(*qry);
+    database->close();
+    return res;
+}
+
 bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	QSqlQuery qry;
 	database->open();
