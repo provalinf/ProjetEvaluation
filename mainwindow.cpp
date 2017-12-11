@@ -73,8 +73,15 @@ void MainWindow::on_addRessource_clicked() {
 void MainWindow::on_tableViewCoursInscrits_doubleClicked() {
     int id = ui->tableViewCoursInscrits->selectionModel()->selectedRows().value(0).data().toInt();
     QSqlQueryModel* coursQuery = lmodel->getCourses()->getCoursById(id);
-    //qDebug() << coursQuery->record(2);
-    //ui->nom->setText(coursQuery->value('name'));
+    int idAuthor=coursQuery->record(0).value("id_Author").toInt();
+    int idDomain=coursQuery->record(0).value("id_Domain").toInt();
+    QSqlQueryModel* userQuery = lmodel->getUser()->getUserById(idAuthor);
+    QSqlQueryModel* domainQuery = lmodel->getCourses()->getDomainById(idDomain);
+
+    ui->nom->setText(coursQuery->record(0).value("name").toString());
+    ui->enseignant->setText(userQuery->record(0).value("login").toString());
+    ui->domaine->setText(domainQuery->record(0).value("name").toString());
+    ui->dateTimeEdit->setDateTime(QDateTime::fromString(coursQuery->record(0).value("date_fin").toString(),"yyyy-MM-ddTHH:mm:ss"));
     ui->stackedWidget->setCurrentIndex(6);
 }
 

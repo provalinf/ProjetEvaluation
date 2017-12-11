@@ -92,6 +92,18 @@ QSqlQueryModel *courses::getAllDomains(){
     return res;
 }
 
+QSqlQueryModel *courses::getDomainById(int id){
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    qry->prepare("SELECT * FROM domains WHERE id_Domain=:idDomain");
+    qry->bindValue(":idDomain", id);
+    qry->exec();
+    res->setQuery(*qry);
+    database->close();
+    return res;
+}
+
 bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	QSqlQuery qry;
 	database->open();
@@ -106,6 +118,10 @@ bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	bool ret = qry.exec();
 	database->close();
 	return ret;
+}
+
+int courses::getNbPlacesRestantes(int id){
+
 }
 
 courses::~courses() = default;

@@ -63,6 +63,18 @@ int users::getIdUser(){
 	return idUserConnect;
 }
 
+QSqlQueryModel *users::getUserById(int id){
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    qry->prepare("SELECT * FROM users WHERE id_User=:idUser");
+    qry->bindValue(":idUser", id);
+    qry->exec();
+    res->setQuery(*qry);
+    database->close();
+    return res;
+}
+
 users::~users() {
 	database->close();
 }

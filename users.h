@@ -23,8 +23,8 @@ class users : public model
 		void defineUserConnect(int idUser);
 		void setConnected();
 		int getStatus();
-
-	int getIdUser();
+        int getIdUser();
+        QSqlQueryModel *getUserById(int id);
 };
 
 #endif // USERS_H
