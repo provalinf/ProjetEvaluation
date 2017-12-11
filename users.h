@@ -25,6 +25,7 @@ class users : public model
 		int getStatus();
         int getIdUser();
         QSqlQueryModel *getUserById(int id);
+        bool desinscrireEtudiantCours(int idEtudiant, int idCours);
 };
 
 #endif // USERS_H

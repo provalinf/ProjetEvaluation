@@ -234,20 +234,6 @@
        <item row="4" column="1">
         <widget class="QLineEdit" name="nbPlaces"/>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>Ajouter une ressource</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QToolButton" name="addRessource">
-         <property name="text">
-          <string>...</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QPushButton" name="proposerCours">
@@ -430,7 +416,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="AfficherCours6">
+    <widget class="QWidget" name="AfficherCoursEtudiant6">
      <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
@@ -461,10 +447,24 @@
          </property>
         </widget>
        </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="nom">
+         <property name="text">
+          <string>nom</string>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_18">
          <property name="text">
           <string>Enseignant : </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="enseignant">
+         <property name="text">
+          <string>enseign</string>
          </property>
         </widget>
        </item>
@@ -475,10 +475,24 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="domaine">
+         <property name="text">
+          <string>dom</string>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_20">
          <property name="text">
           <string>Date fin :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QDateTimeEdit" name="dateTimeEdit">
+         <property name="enabled">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -491,50 +505,14 @@
        </item>
        <item row="4" column="1">
         <widget class="QProgressBar" name="progressBar">
-         <property name="value">
-          <number>24</number>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QDateTimeEdit" name="dateTimeEdit">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="domaine">
-         <property name="text">
-          <string>dom</string>
+         <property name="maximum">
+          <number>100</number>
          </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="enseignant">
-         <property name="text">
-          <string>enseign</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="nom">
-         <property name="text">
-          <string>nom</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_22">
-         <property name="text">
-          <string>Dépot :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QToolButton" name="deposer">
-         <property name="text">
-          <string>...</string>
+         <property name="value">
+          <number>12</number>
          </property>
         </widget>
        </item>
@@ -551,6 +529,19 @@
       </property>
       <property name="text">
        <string>Se désinscrire</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="return_CoursSelectionEtudiant">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Retour</string>
       </property>
      </widget>
     </widget>
@@ -740,7 +731,6 @@
   <tabstop>dateFin</tabstop>
   <tabstop>comboBoxDomaine</tabstop>
   <tabstop>nbPlaces</tabstop>
-  <tabstop>addRessource</tabstop>
   <tabstop>proposerCours</tabstop>
   <tabstop>reset</tabstop>
   <tabstop>return_proposerCours</tabstop>
@@ -751,7 +741,6 @@
   <tabstop>tableViewCoursEnAttente</tabstop>
   <tabstop>return_coursAttenteDeValidation</tabstop>
   <tabstop>dateTimeEdit</tabstop>
-  <tabstop>deposer</tabstop>
   <tabstop>desinscrire</tabstop>
   <tabstop>coursDispo</tabstop>
   <tabstop>coursSuivis</tabstop>

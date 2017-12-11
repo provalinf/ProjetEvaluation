@@ -75,6 +75,17 @@ QSqlQueryModel *users::getUserById(int id){
     return res;
 }
 
+bool users::desinscrireEtudiantCours(int idEtudiant, int idCours){
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    qry->prepare("DELETE FROM studies WHERE id_Student=:idStudent AND id_Course=:idCourse");
+    qry->bindValue(":idStudent", idEtudiant);
+    qry->bindValue(":idCourse", idCours);
+    bool ret = qry->exec();
+    database->close();
+    return ret;
+}
+
 users::~users() {
 	database->close();
 }

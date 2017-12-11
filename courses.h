@@ -5,6 +5,7 @@
 #include "model.h"
 
 class courses : public model {
+int idCurrentCours;
 public:
 	courses(QSqlDatabase *database);
 
@@ -31,6 +32,10 @@ public:
 	bool addNewCours(QHash<QString, QString> fields, int idUser);
 
     int getNbPlacesRestantes(int id);
+
+    void setIdCurrentCours(int id);
+
+    int getIdCurrentCours();
 };
 
 #endif // COURSES_H

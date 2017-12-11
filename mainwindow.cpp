@@ -82,6 +82,10 @@ void MainWindow::on_tableViewCoursInscrits_doubleClicked() {
     ui->enseignant->setText(userQuery->record(0).value("login").toString());
     ui->domaine->setText(domainQuery->record(0).value("name").toString());
     ui->dateTimeEdit->setDateTime(QDateTime::fromString(coursQuery->record(0).value("date_fin").toString(),"yyyy-MM-ddTHH:mm:ss"));
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(coursQuery->record(0).value("nb_Place").toInt());
+    ui->progressBar->setValue(lmodel->getCourses()->getNbPlacesRestantes(id));
+    lmodel->getCourses()->setIdCurrentCours(coursQuery->record(0).value("id_Course").toInt());
     ui->stackedWidget->setCurrentIndex(6);
 }
 
@@ -208,4 +212,15 @@ void MainWindow::on_return_coursProf_clicked()
 void MainWindow::on_return_coursInscrits_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
+}
+
+void MainWindow::on_desinscrire_clicked()
+{
+    lmodel->getUser()->desinscrireEtudiantCours(lmodel->getUser()->getIdUser(),lmodel->getCourses()->getIdCurrentCours());
+    MainWindow::on_coursSuivis_clicked();
+}
+
+void MainWindow::on_return_CoursSelectionEtudiant_clicked()
+{
+    MainWindow::on_coursSuivis_clicked();
 }

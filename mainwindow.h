@@ -30,7 +30,7 @@ class MainWindow : public QMainWindow
 
 		void on_reset_clicked();
 
-		void on_addRessource_clicked();
+        void on_addRessource_clicked();
 
         void on_tableViewCoursInscrits_doubleClicked();
 
@@ -42,7 +42,7 @@ class MainWindow : public QMainWindow
 
 		void on_comboBoxTypeRessource_activated(const QString &arg1);
 
-		void on_deposer_clicked();
+        void on_deposer_clicked();
 
 		void on_coursSuivis_clicked();
 
@@ -63,6 +63,10 @@ class MainWindow : public QMainWindow
         void on_return_coursProf_clicked();
 
         void on_return_coursInscrits_clicked();
+
+        void on_desinscrire_clicked();
+
+        void on_return_CoursSelectionEtudiant_clicked();
 
 private:
         loadmodel *lmodel;

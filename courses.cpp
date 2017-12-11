@@ -121,7 +121,31 @@ bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 }
 
 int courses::getNbPlacesRestantes(int id){
+    QSqlQueryModel *res = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery();
+    database->open();
+    qry->prepare("SELECT * FROM courses WHERE id_Course=:idCourse");
+    qry->bindValue(":idCourse", id);
+    qry->exec();
+    res->setQuery(*qry);
+    int nb_place = res->record(0).value("nb_Place").toInt();
+    QSqlQueryModel *res2 = new QSqlQueryModel();
+    QSqlQuery *qry2 = new QSqlQuery();
+    qry2->prepare("SELECT COUNT(id_Studies) FROM studies WHERE id_Course=:idCourse");
+    qry2->bindValue(":idCourse", id);
+    qry2->exec();
+    res2->setQuery(*qry);
+    int nb_place_prises = res->record(0).value(0).toInt();
+    database->close();
+    return nb_place - nb_place_prises;
+}
 
+void courses::setIdCurrentCours(int id){
+    idCurrentCours = id;
+}
+
+int courses::getIdCurrentCours(){
+    return idCurrentCours;
 }
 
 courses::~courses() = default;
