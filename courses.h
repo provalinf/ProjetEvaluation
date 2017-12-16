@@ -13,15 +13,15 @@ public:
 
     QSqlQueryModel *getCoursById(int id);
 
-	QSqlQueryModel *getCoursInscrits();
+	QSqlQueryModel *getCoursInscrits(int i);
 
 	void setAcceptCours(int idCours);
 
 	void setRefuseCours(int idCours);
 
-    QSqlQueryModel *getCoursDispo();
+    QSqlQueryModel *getCoursDispo(int i);
 
-    QSqlQueryModel *getCoursProf();
+    QSqlQueryModel *getCoursProf(int i);
 
     QSqlQueryModel *getCoursAttenteValidation();
 

@@ -157,13 +157,13 @@ void MainWindow::on_proposerCours_clicked() {
 
 void MainWindow::on_coursSuivis_clicked()
 {
-    ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits());
+    ui->tableViewCoursInscrits->setModel(lmodel->getCourses()->getCoursInscrits(lmodel->getUser()->getIdUser()));
     ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_coursDispo_clicked()
 {
-    ui->tableViewCoursDispo->setModel(lmodel->getCourses()->getCoursDispo());
+    ui->tableViewCoursDispo->setModel(lmodel->getCourses()->getCoursDispo(lmodel->getUser()->getIdUser()));
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -185,7 +185,7 @@ void MainWindow::on_coursAttente_clicked()
 
 void MainWindow::on_listeCours_clicked()
 {
-	ui->tableViewCoursProf->setModel(lmodel->getCourses()->getCoursProf());
+	ui->tableViewCoursProf->setModel(lmodel->getCourses()->getCoursProf(lmodel->getUser()->getIdUser()));
 	ui->tableViewCoursProf->setColumnHidden(0, true);
 	ui->stackedWidget->setCurrentIndex(10);
 }
