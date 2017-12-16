@@ -25,6 +25,7 @@
     </property>
     <property name="currentIndex">
      <number>10</number>
+     <number>9</number>
     </property>
     <widget class="QWidget" name="Connexion0">
      <widget class="QPushButton" name="resetButton">
