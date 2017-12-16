@@ -70,10 +70,6 @@ class MainWindow : public QMainWindow
 
 		void on_tableViewCoursProf_doubleClicked(const QModelIndex &index);
 
-		void on_tableViewCoursDispo_doubleClicked(const QModelIndex &index);
-
-		void on_tableViewCoursDispo_clicked(const QModelIndex &index);
-
 		void on_tableViewCoursEnAttente_doubleClicked(const QModelIndex &index);
 
 	private:

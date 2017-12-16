@@ -62,7 +62,13 @@ QSqlQueryModel *courses::getCoursProf() {
     loadmodel* lmodel= m->getLModel();
     users* user = lmodel->getUser();
     int id = user->getIdUser();
-    qry->prepare("SELECT * FROM courses WHERE id_Author=:idAuthor");
+    qry->prepare("SELECT id_course, c.name as 'Titre', d.name as 'Domaine', nb_place as 'Nb place', date_deb as 'Date de début', date_fin as 'Date de fin', "
+						 "CASE valide\n"
+						 "      WHEN '0' THEN 'Refusé'\n"
+						 "      WHEN '1' THEN 'Accepté'\n"
+						 "      ELSE 'Non contrôlé'\n"
+						 "   END as 'Validé' FROM courses as c "
+						 "JOIN domains as d ON c.id_domain=d.id_domain WHERE id_Author=:idAuthor");
     qry->bindValue(":idAuthor", id);
     qry->exec();
     res->setQuery(*qry);

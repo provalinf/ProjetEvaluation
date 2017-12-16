@@ -144,7 +144,7 @@ void MainWindow::on_proposerCours_clicked() {
         if (lmodel->getCourses()->addNewCours(stringList, lmodel->getUser()->getIdUser())) {
             ui->stackedWidget->setCurrentIndex(8);
 		} else {
-            qDebug() << "Pas envoyé à la BD";
+            qDebug() << "Pas envoyé à la BDD";
 		}
 	} else {
 		qDebug() << invalid << "invalide";
@@ -185,7 +185,8 @@ void MainWindow::on_coursAttente_clicked()
 
 void MainWindow::on_listeCours_clicked()
 {
-    ui->tableViewCoursProf->setModel(lmodel->getCourses()->getCoursProf());
+	ui->tableViewCoursProf->setModel(lmodel->getCourses()->getCoursProf());
+	ui->tableViewCoursProf->setColumnHidden(0, true);
 	ui->stackedWidget->setCurrentIndex(10);
 }
 
@@ -242,6 +243,12 @@ void MainWindow::on_tableViewCoursEnAttente_doubleClicked(const QModelIndex &ind
 	 } else if (msgBox.clickedButton() == refuseButton) {
 		 qDebug() << "cours refuse";
 	 }
-	 int id = ui->tableViewCoursEnAttente->selectionModel()->selectedRows().value(0);
-	 qDebug() << id;
+	/* int id = ui->tableViewCoursEnAttente->selectionModel()->selectedRows().value(0);
+	 qDebug() << id;*/
+}
+
+void MainWindow::on_tableViewCoursProf_doubleClicked(const QModelIndex &index)
+{
+	int id = ui->tableViewCoursProf->selectionModel()->selectedRows().value(0).data().toInt();
+	qDebug() << "clic sur" << id;
 }
