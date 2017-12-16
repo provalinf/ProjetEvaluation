@@ -27,8 +27,6 @@ public:
 
 	QList<QString> verifInfoCours(QHash<QString, QString> hash);
 
-	bool addNewCours(QHash<QString, QString> fields);
-
 	bool addNewCours(QHash<QString, QString> fields, int idUser);
 
     int getNbPlacesRestantes(int id);
@@ -36,6 +34,8 @@ public:
     void setIdCurrentCours(int id);
 
     int getIdCurrentCours();
+
+	QAbstractItemModel *getCoursRessources(int i);
 };
 
 #endif // COURSES_H

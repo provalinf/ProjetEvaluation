@@ -251,4 +251,8 @@ void MainWindow::on_tableViewCoursProf_doubleClicked(const QModelIndex &index)
 {
 	int id = ui->tableViewCoursProf->selectionModel()->selectedRows().value(0).data().toInt();
 	qDebug() << "clic sur" << id;
+	ui->stackedWidget->setCurrentIndex(11);
+	ui->tableViewRessourcesProf->setModel(lmodel->getCourses()->getCoursRessources(id));
+	qDebug() << "return " << lmodel->getCourses()->getCoursRessources(id);
+	ui->tableViewRessourcesProf->setColumnHidden(0, true);
 }

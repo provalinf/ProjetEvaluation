@@ -110,6 +110,24 @@ QSqlQueryModel *courses::getDomainById(int id){
     return res;
 }
 
+QAbstractItemModel *courses::getCoursRessources(int id_cours) {
+	QSqlQueryModel *res = new QSqlQueryModel();
+	QSqlQuery *qry = new QSqlQuery();
+	database->open();
+	/*qry->prepare("SELECT id_resource, title as 'Nom', tr.name as 'Type', descr as 'Description', date_deb as 'Date de début', date_fin as 'Date de fin' FROM resources as c"
+						 "JOIN Type_resource as tr ON tr.id_type=c.id_type"
+						 "WHERE id_course=:idCours");*/
+	qry->prepare("SELECT id_resource, title as 'Nom', tr.name as 'Type', descr as 'Description', date_deb as 'Date de début', date_fin as 'Date de fin' FROM resources as c "
+						 "JOIN Type_resource as tr ON tr.id_type=c.id_type "
+						 "WHERE id_course=:idCours");
+	qry->bindValue(":idCours", id_cours);
+	qry->exec();
+	res->setQuery(*qry);
+	database->close();
+	return res;
+}
+
+
 bool courses::addNewCours(QHash<QString, QString> fields, int idUser) {
 	QSqlQuery qry;
 	database->open();
@@ -175,4 +193,3 @@ QList<QString> courses::verifInfoCours(QHash<QString, QString> fields) {
 
 	return erreurs;
 }
-
