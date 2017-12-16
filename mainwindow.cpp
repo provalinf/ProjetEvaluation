@@ -227,24 +227,31 @@ void MainWindow::on_return_CoursSelectionEtudiant_clicked()
 }
 
 
-void MainWindow::on_tableViewCoursEnAttente_doubleClicked(const QModelIndex &index)
+void MainWindow::on_tableViewCoursEnAttente_doubleClicked()
 {
 	 QMessageBox msgBox;
-	 msgBox.setWindowTitle("Acceter/Refuser cours");
-	 msgBox.setText("nom du cours");
+	 int id = ui->tableViewCoursEnAttente->selectionModel()->selectedRows().value(0).data().toInt();
+	 QSqlQueryModel* nom = lmodel->getCourses()->getCoursById(id);
+	 msgBox.setWindowTitle("Cours : "+nom->record(0).value("name").toString());
+	 msgBox.setText("Que souhaitez-vous faire ?");
 	 QPushButton *acceptButton = msgBox.addButton(tr("Accepter"), QMessageBox::ActionRole);
 	 QPushButton *refuseButton = msgBox.addButton(tr("Refuser"), QMessageBox::ActionRole);
+	 QPushButton *annuleButton = msgBox.addButton(tr("Annuler"), QMessageBox::ActionRole);
 
 	 msgBox.exec();
 
 	 if (msgBox.clickedButton() == acceptButton) {
 		 qDebug() << "cours accepte";
-		 //lmodel->getCourses()->acceptCours(id);
-	 } else if (msgBox.clickedButton() == refuseButton) {
-		 qDebug() << "cours refuse";
+		 lmodel->getCourses()->setAcceptCours(id);
 	 }
-	/* int id = ui->tableViewCoursEnAttente->selectionModel()->selectedRows().value(0);
-	 qDebug() << id;*/
+	 else if (msgBox.clickedButton() == refuseButton) {
+		 lmodel->getCourses()->setRefuseCours(id);
+	 }
+	 else if (msgBox.clickedButton() == annuleButton) {
+		 msgBox.close();
+	 }
+
+	 ui->tableViewCoursEnAttente->setModel(lmodel->getCourses()->getCoursAttenteValidation()); //maj de la table
 }
 
 void MainWindow::on_tableViewCoursProf_doubleClicked(const QModelIndex &index)

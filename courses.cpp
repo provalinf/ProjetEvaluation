@@ -172,6 +172,24 @@ int courses::getIdCurrentCours(){
     return idCurrentCours;
 }
 
+void courses::setRefuseCours(int idCours){
+	QSqlQuery *qry = new QSqlQuery();
+	database->open();
+	qry->prepare("UPDATE courses SET valide = 0 WHERE id_Course=:idCourse");
+	qry->bindValue(":idCourse", idCours);
+	qry->exec();
+	database->close();
+}
+
+void courses::setAcceptCours(int idCours){
+	QSqlQuery *qry = new QSqlQuery();
+	database->open();
+	qry->prepare("UPDATE courses SET valide = 1 WHERE id_Course=:idCourse");
+	qry->bindValue(":idCourse", idCours);
+	qry->exec();
+	database->close();
+}
+
 courses::~courses() = default;
 
 QList<QString> courses::verifInfoCours(QHash<QString, QString> fields) {
