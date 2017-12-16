@@ -224,3 +224,24 @@ void MainWindow::on_return_CoursSelectionEtudiant_clicked()
 {
     MainWindow::on_coursSuivis_clicked();
 }
+
+
+void MainWindow::on_tableViewCoursEnAttente_doubleClicked(const QModelIndex &index)
+{
+	 QMessageBox msgBox;
+	 msgBox.setWindowTitle("Acceter/Refuser cours");
+	 msgBox.setText("nom du cours");
+	 QPushButton *acceptButton = msgBox.addButton(tr("Accepter"), QMessageBox::ActionRole);
+	 QPushButton *refuseButton = msgBox.addButton(tr("Refuser"), QMessageBox::ActionRole);
+
+	 msgBox.exec();
+
+	 if (msgBox.clickedButton() == acceptButton) {
+		 qDebug() << "cours accepte";
+		 //lmodel->getCourses()->acceptCours(id);
+	 } else if (msgBox.clickedButton() == refuseButton) {
+		 qDebug() << "cours refuse";
+	 }
+	 int id = ui->tableViewCoursEnAttente->selectionModel()->selectedRows().value(0);
+	 qDebug() << id;
+}
