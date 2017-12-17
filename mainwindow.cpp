@@ -8,6 +8,9 @@ MainWindow* MainWindow::instance = NULL;
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
 	lmodel = new loadmodel();
 	ui->setupUi(this);
+	ui->comboBoxTypeRessource_2->addItem("Fichier");
+	ui->comboBoxTypeRessource_2->addItem("Texte");
+	ui->comboBoxTypeRessource_2->addItem("Devoir");
     /* Toujours demarrer l'application sur la page de connexion */
     ui->stackedWidget->setCurrentIndex(0);
 }
@@ -267,9 +270,7 @@ void MainWindow::on_tableViewCoursProf_doubleClicked(const QModelIndex &index)
 
 void MainWindow::on_buttonAddRessource_clicked()
 {
-	ui->comboBoxTypeRessource_2->addItem("Fichier");
-	ui->comboBoxTypeRessource_2->addItem("Texte");
-	ui->comboBoxTypeRessource_2->addItem("Devoir");
+	ui->erreurFile->setVisible(false);
 	ui->stackedWidget->setCurrentIndex(12);
 }
 
@@ -319,7 +320,7 @@ void MainWindow::on_toolButtonChooser_2_clicked()
 	//file.exec();
 	QFileInfo name;
 	name = file.getOpenFileName();
-	lmodel->getCourses()->setRessourceNameChoosing(name.baseName());
+	lmodel->getCourses()->setRessourceNameChoosing(name.absoluteFilePath());
 	ui->nomFichier_2->setText(name.baseName());
 	ui->nomFichier_2->setEnabled(true);
 	//qDebug() <<file.getOpenFileUrl();
@@ -329,7 +330,13 @@ void MainWindow::on_toolButtonChooser_2_clicked()
 void MainWindow::on_pushButtonValidFile_clicked()
 {
 	//dépend du choix de stockage
-	ui->stackedWidget->setCurrentIndex(11);
+	if(lmodel->getCourses()->getPathResource() != NULL){
+		qDebug() << lmodel->getCourses()->getPathResource();
+		ui->stackedWidget->setCurrentIndex(11);
+	}else{
+		ui->erreurFile->setText("Veuillez choisir un fichier");
+		ui->erreurFile->setVisible(true);
+	}
 }
 
 void MainWindow::on_return_viewRessourceProf_clicked()
