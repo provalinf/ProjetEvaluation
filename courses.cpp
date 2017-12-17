@@ -168,8 +168,9 @@ int courses::getIdType(QString type){
 
 void courses::addResource(QString text, QDate debut, QDate fin, QString type, QString descr, QString titre, int id){
 	QSqlQuery *qry = new QSqlQuery();
+	QSqlQueryModel *res = new QSqlQueryModel();
 	database->open();
-	qry->prepare("INSERT INTO resources(title, descr, date_deb, date_fin, id_Course, id_Type) VALUES (:titre, :descr, :deb, :fin, :idCourse, :type)"); //id auto incremente ?
+	qry->prepare("INSERT INTO resources(title, descr, date_deb, date_fin, id_Course, id_Type) VALUES (:titre, :descr, :deb, :fin, :idCourse, :type)");
 	qry->bindValue(":debut", debut);
 	qry->bindValue(":fin", fin);
 	qry->bindValue(":type", getIdType(type));
@@ -178,10 +179,17 @@ void courses::addResource(QString text, QDate debut, QDate fin, QString type, QS
 	qry->bindValue(":idCourse", id);
 	qry->exec();
 
+//	QSqlQuery *qry1 = new QSqlQuery();
+//	qry1->prepare("SELECT last_insert_id() FROM resources");
+//	qry1->exec();
+	int id_Resource = qry->lastInsertId().toInt();
+	qDebug() << id_Resource;
+
+
 	QSqlQuery *qry2 = new QSqlQuery();
 	qry2->prepare("INSERT INTO resource_text VALUES (:idResource, :text)");
 	qry2->bindValue(":text", text);
-	qry2->bindValue(":idResource", 5);
+	qry2->bindValue(":idResource", id_Resource);
 	qry2->exec();
 
 	database->close();
