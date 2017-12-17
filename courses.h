@@ -6,6 +6,7 @@
 
 class courses : public model {
 int idCurrentCours;
+QString nomCoursChoisi;
 public:
 	courses(QSqlDatabase *database);
 
@@ -36,6 +37,14 @@ public:
     int getNbPlacesRestantes(int id);
 
     void setIdCurrentCours(int id);
+
+	int getIdType(QString type);
+
+	void setRessourceNameChoosing(QString nom);
+
+	void setTextForResource(QString text);
+
+	void addResource(QString text, QDate debut,QDate fin, QString type, QString descr, QString titre);
 
     int getIdCurrentCours();
 

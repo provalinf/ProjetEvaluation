@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ProjetEvaluation"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\Qt\;CMake Files\..\..\..\..\Qt\Qt5.9.2\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Sql\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProjetEvaluation">
+				<Option output="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/ProjetEvaluation.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_SQL_LIB"/>
+					<Add directory="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/ProjetEvaluation_autogen/include"/>
+					<Add directory="D:/Mes Documents/Desktop/mysql-connector-c-6.1.11-win32/lib"/>
+					<Add directory="D:/Mes Documents/Desktop/mysql-connector-c-6.1.11-win32/include"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtSql"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include/c++"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/../../../../include"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include-fixed"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetEvaluation"/>
+					<CompileFile command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProjetEvaluation/fast">
+				<Option output="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/ProjetEvaluation.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_SQL_LIB"/>
+					<Add directory="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/ProjetEvaluation_autogen/include"/>
+					<Add directory="D:/Mes Documents/Desktop/mysql-connector-c-6.1.11-win32/lib"/>
+					<Add directory="D:/Mes Documents/Desktop/mysql-connector-c-6.1.11-win32/include"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE"/>
+					<Add directory="C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtSql"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include/c++"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/../../../../include"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/include-fixed"/>
+					<Add directory="c:\mingw2\bin\../lib/gcc/mingw32/5.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetEvaluation/fast"/>
+					<CompileFile command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProjetEvaluation_autogen">
+				<Option working_dir="C:/Users/Cyril/Documents/CPOA2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetEvaluation_autogen"/>
+					<CompileFile command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW2/bin/mingw32-make.exe -f &quot;C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QMYSQLDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyril/Documents/CPOA2/../../../../Qt/Qt5.9.2/5.9.2/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.9.2\5.9.2\mingw53_32\lib\cmake\Qt5Sql\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

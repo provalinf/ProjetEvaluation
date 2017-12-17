@@ -72,6 +72,18 @@ class MainWindow : public QMainWindow
 
 		void on_tableViewCoursEnAttente_doubleClicked();
 
+		void on_buttonAddRessource_clicked();
+
+		void on_buttonReset_clicked();
+
+		void on_pushResetText_clicked();
+
+		void on_pushButtonAddText_clicked();
+
+		void on_pushButton_clicked();
+
+		void on_pushButton_2_clicked();
+
 	private:
         loadmodel *lmodel;
 		Ui::MainWindow *ui;

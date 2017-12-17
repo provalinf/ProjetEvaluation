@@ -1,0 +1,2 @@
+set(AM_MOC_OLD_SETTINGS "QT_CORE_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_WIDGETS_LIB ~~~ C:/Users/Cyril/Documents/CPOA2/cmake-build-debug/ProjetEvaluation_autogen/include;C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include;C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtCore;C:/Qt/Qt5.9.2/5.9.2/mingw53_32/./mkspecs/win32-g++;C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtWidgets;C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtGui;C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtANGLE;C:/Qt/Qt5.9.2/5.9.2/mingw53_32/include/QtSql ~~~  ~~~ FALSE ~~~ ")
+set(AM_UIC_OLD_SETTINGS " ~~~  ~~~ ")

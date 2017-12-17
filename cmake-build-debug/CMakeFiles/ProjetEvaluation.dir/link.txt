@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2017.2.3\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\ProjetEvaluation.dir/objects.a
+C:\Qt\Qt5.9.2\Tools\mingw530_32\bin\ar.exe cr CMakeFiles\ProjetEvaluation.dir/objects.a @CMakeFiles\ProjetEvaluation.dir\objects1.rsp
+C:\Qt\Qt5.9.2\Tools\mingw530_32\bin\g++.exe  -std=c++11 -g   -Wl,--whole-archive CMakeFiles\ProjetEvaluation.dir/objects.a -Wl,--no-whole-archive  -o ProjetEvaluation.exe -Wl,--out-implib,libProjetEvaluation.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ProjetEvaluation.dir\linklibs.rsp

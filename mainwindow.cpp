@@ -32,7 +32,7 @@ void MainWindow::on_connectButton_clicked() {
 	QString password = ui->passwordTB->text();
     if (lmodel->getUser()->checkAndDefinedUser(login, password)) {
         switch (lmodel->getUser()->getStatus()) {
-		case 0:
+		case 3:
 			qDebug() << "Administrateur";
 			ui->helloAdmin->setText("Bonjour "+login+ " !");
 			ui->stackedWidget->setCurrentIndex(9);
@@ -94,6 +94,7 @@ void MainWindow::on_toolButtonChooser_clicked() {
 	//file.exec();
 	QFileInfo name;
 	name = file.getOpenFileName();
+	lmodel->getCourses()->setRessourceNameChoosing(name.baseName());
 	ui->nomFichier->setText(name.baseName());
 	ui->nomFichier->setEnabled(true);
 	//qDebug() <<file.getOpenFileUrl();
@@ -262,4 +263,50 @@ void MainWindow::on_tableViewCoursProf_doubleClicked(const QModelIndex &index)
 	ui->tableViewRessourcesProf->setModel(lmodel->getCourses()->getCoursRessources(id));
 	qDebug() << "return " << lmodel->getCourses()->getCoursRessources(id);
 	ui->tableViewRessourcesProf->setColumnHidden(0, true);
+}
+
+void MainWindow::on_buttonAddRessource_clicked()
+{
+	ui->comboBoxTypeRessource_2->addItem("Fichier");
+	ui->comboBoxTypeRessource_2->addItem("Texte");
+	ui->comboBoxTypeRessource_2->addItem("Devoir");
+	ui->stackedWidget->setCurrentIndex(12);
+}
+
+void MainWindow::on_buttonReset_clicked()
+{
+	lmodel->getCourses()->setRessourceNameChoosing("");// permet de reinitialiser l'ancien nom
+	ui->nomFichier->clear();
+}
+
+void MainWindow::on_pushResetText_clicked()
+{
+	ui->textRessource->clear();
+}
+
+void MainWindow::on_pushButtonAddText_clicked()
+{
+	lmodel->getCourses()->addResource(ui->textRessource->toPlainText(), ui->dateDebut_2->date(),
+									  ui->dateFin_2->date(), ui->comboBoxTypeRessource_2->currentText(),
+									  ui->lineEditDescriptionRessource->text(), ui->lineEditTitreRessource->text());
+	ui->stackedWidget->setCurrentIndex(11); // redirection sur la liste des ressources
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+	ui->lineEditDescriptionRessource->clear();
+	ui->lineEditTitreRessource->clear();
+	ui->dateDebut_2->clear();
+	ui->dateFin_2->clear();
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+	if(ui->comboBoxTypeRessource_2->currentText() == "Texte"){
+		ui->stackedWidget->setCurrentIndex(13);
+	}else if (ui->comboBoxTypeRessource_2->currentText() == "Fichier"){
+		ui->stackedWidget->setCurrentIndex(14);
+	}else if (ui->comboBoxTypeRessource_2->currentText() == " Devoir"){
+		ui->stackedWidget->setCurrentIndex(15);
+	}
 }

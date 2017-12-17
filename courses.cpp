@@ -2,7 +2,6 @@
 #include "mainwindow.h"
 
 courses::courses(QSqlDatabase *database) : model(database) {
-
 }
 
 QSqlQueryModel *courses::getCoursById(int id) {
@@ -168,8 +167,43 @@ void courses::setIdCurrentCours(int id){
     idCurrentCours = id;
 }
 
+int courses::getIdType(QString type){
+	QSqlQuery *qry = new QSqlQuery();
+	QSqlQueryModel *res = new QSqlQueryModel();
+	qry->prepare("SELECT * FROM type_resource WHERE name=:name");
+	qry->bindValue(":name", type);
+	qry->exec();
+	res->setQuery(*qry);
+	return res->query().first();
+}
+
+void courses::addResource(QString text, QDate debut, QDate fin, QString type, QString descr, QString titre){
+	QSqlQuery *qry = new QSqlQuery();
+	database->open();
+	qry->prepare("INSERT INTO resources VALUES (5, :titre, :descr, :deb, :fin, :idCourse, :type)"); //id auto incremente ?
+	qry->bindValue(":debut", debut);
+	qry->bindValue(":fin", fin);
+	qry->bindValue(":type", getIdType(type));
+	qry->bindValue(":descr", descr);
+	qry->bindValue(":titre", titre);
+	qry->bindValue(":idCourse", 3);
+	qry->exec();
+
+	QSqlQuery *qry2 = new QSqlQuery();
+	qry2->prepare("INSERT INTO resource_text VALUES (:idResource, :text)");
+	qry2->bindValue(":text", text);
+	qry2->bindValue(":idResource", 5);
+	qry2->exec();
+
+	database->close();
+}
+
 int courses::getIdCurrentCours(){
     return idCurrentCours;
+}
+
+void courses::setRessourceNameChoosing(QString nom) {
+	nomCoursChoisi = nom;
 }
 
 void courses::setRefuseCours(int idCours){
