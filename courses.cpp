@@ -4,6 +4,7 @@
 courses::courses(QSqlDatabase *database) : model(database) {
 }
 
+
 QSqlQueryModel *courses::getCoursById(int id) {
 	QSqlQueryModel *res = new QSqlQueryModel();
 	QSqlQuery *qry = new QSqlQuery();
@@ -156,6 +157,10 @@ void courses::setIdCurrentCours(int id) {
 	idCurrentCours = id;
 }
 
+QString courses::getPathResource(){
+	return nomCoursChoisi;
+}
+
 int courses::getIdType(QString type){
 	QSqlQuery *qry = new QSqlQuery();
 	QSqlQueryModel *res = new QSqlQueryModel();
@@ -179,12 +184,7 @@ void courses::addResource(QString text, QDate debut, QDate fin, QString type, QS
 	qry->bindValue(":idCourse", id);
 	qry->exec();
 
-//	QSqlQuery *qry1 = new QSqlQuery();
-//	qry1->prepare("SELECT last_insert_id() FROM resources");
-//	qry1->exec();
 	int id_Resource = qry->lastInsertId().toInt();
-	qDebug() << id_Resource;
-
 
 	QSqlQuery *qry2 = new QSqlQuery();
 	qry2->prepare("INSERT INTO resource_text VALUES (:idResource, :text)");

@@ -12,6 +12,8 @@ public:
 
 	~courses();
 
+	QString getPathResource();
+
     QSqlQueryModel *getCoursById(int id);
 
 	QSqlQueryModel *getCoursInscrits(int i);
