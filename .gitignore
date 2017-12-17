@@ -1,3 +1,4 @@
 CPOA2.pro
 CPOA2.pro.user
 CMakeLists.txt
+*.cpp

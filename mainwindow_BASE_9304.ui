@@ -17,15 +17,14 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>20</y>
+      <x>0</x>
+      <y>0</y>
       <width>631</width>
       <height>401</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>12</number>
-     <number>11</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Connexion0">
      <widget class="QPushButton" name="resetButton">
@@ -153,9 +152,6 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderHighlightSections">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
       <attribute name="verticalHeaderHighlightSections">
@@ -358,9 +354,6 @@
       <attribute name="horizontalHeaderHighlightSections">
        <bool>false</bool>
       </attribute>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
       <attribute name="verticalHeaderHighlightSections">
        <bool>false</bool>
       </attribute>
@@ -436,37 +429,11 @@
           <bool>true</bool>
          </property>
          <property name="text">
-          <string>...</string>
+          <string>TextLabel</string>
          </property>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QPushButton" name="buttonAdd">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>270</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Ajouter</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="buttonReset">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>270</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Réinitialiser</string>
-      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="CoursAttenteDeValidation5">
@@ -492,9 +459,6 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderHighlightSections">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
       <attribute name="verticalHeaderHighlightSections">
@@ -875,9 +839,6 @@
       <attribute name="horizontalHeaderHighlightSections">
        <bool>false</bool>
       </attribute>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
       <attribute name="verticalHeaderHighlightSections">
        <bool>false</bool>
       </attribute>
@@ -911,194 +872,7 @@
        <string>Retour</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="buttonAddRessource">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>10</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Ajouter...</string>
-      </property>
-     </widget>
     </widget>
-    <widget class="QWidget" name="TypeRessource12">
-     <widget class="QWidget" name="formLayoutWidget_4">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>90</y>
-        <width>281</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <layout class="QFormLayout" name="formLayout_4">
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_22">
-         <property name="text">
-          <string>Type de ressource : </string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QComboBox" name="comboBoxTypeRessource_2"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_26">
-         <property name="text">
-          <string>Date début :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_25">
-         <property name="text">
-          <string>Date fin :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QDateTimeEdit" name="dateDebut_2">
-         <property name="minimumDateTime">
-          <datetime>
-           <hour>0</hour>
-           <minute>0</minute>
-           <second>0</second>
-           <year>2017</year>
-           <month>12</month>
-           <day>14</day>
-          </datetime>
-         </property>
-         <property name="calendarPopup">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QDateTimeEdit" name="dateFin_2">
-         <property name="minimumDateTime">
-          <datetime>
-           <hour>0</hour>
-           <minute>0</minute>
-           <second>0</second>
-           <year>2017</year>
-           <month>12</month>
-           <day>14</day>
-          </datetime>
-         </property>
-         <property name="calendarPopup">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEditTitreRessource"/>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLineEdit" name="lineEditDescriptionRessource"/>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_27">
-         <property name="text">
-          <string>Titre :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_28">
-         <property name="text">
-          <string>Description :</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>240</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Réinitialiser</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>240</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Valider</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="AjoutTexte13">
-     <widget class="QPlainTextEdit" name="textRessource">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>20</y>
-        <width>451</width>
-        <height>251</height>
-       </rect>
-      </property>
-      <property name="backgroundVisible">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_10">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>0</y>
-        <width>281</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Saisissez votre texte ici :</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushResetText">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>290</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Réinitialiser</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButtonAddText">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>290</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Ajouter</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="AjoutFichier14"/>
-    <widget class="QWidget" name="AjoutDevoir15"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
