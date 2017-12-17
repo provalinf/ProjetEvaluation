@@ -88,7 +88,11 @@ class MainWindow : public QMainWindow
 
 		void on_pushButtonValidFile_clicked();
 
-	private:
+        void on_return_viewRessourceProf_clicked();
+
+        void on_return_resource_clicked();
+
+private:
         loadmodel *lmodel;
 		Ui::MainWindow *ui;
 };

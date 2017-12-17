@@ -334,5 +334,10 @@ void MainWindow::on_pushButtonValidFile_clicked()
 
 void MainWindow::on_return_viewRessourceProf_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(10);
+    on_listeCours_clicked();
+}
+
+void MainWindow::on_return_resource_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
 }
