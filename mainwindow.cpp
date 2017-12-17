@@ -97,7 +97,8 @@ void MainWindow::on_toolButtonChooser_clicked() {
 	//file.exec();
 	QFileInfo name;
 	name = file.getOpenFileName();
-	lmodel->getCourses()->setRessourceNameChoosing(name.baseName());
+	lmodel->getCourses()->setRessourceNameChoosing(name.absoluteFilePath());
+	lmodel->getCourses()->setRessourceNameChoosingBase(name.baseName());
 	ui->nomFichier->setText(name.baseName());
 	ui->nomFichier->setEnabled(true);
 	//qDebug() <<file.getOpenFileUrl();
@@ -321,6 +322,7 @@ void MainWindow::on_toolButtonChooser_2_clicked()
 	QFileInfo name;
 	name = file.getOpenFileName();
 	lmodel->getCourses()->setRessourceNameChoosing(name.absoluteFilePath());
+	lmodel->getCourses()->setRessourceNameChoosingBase(name.fileName());
 	ui->nomFichier_2->setText(name.baseName());
 	ui->nomFichier_2->setEnabled(true);
 	//qDebug() <<file.getOpenFileUrl();
@@ -329,9 +331,17 @@ void MainWindow::on_toolButtonChooser_2_clicked()
 
 void MainWindow::on_pushButtonValidFile_clicked()
 {
-	//dépend du choix de stockage
-	if(lmodel->getCourses()->getPathResource() != NULL){
-		qDebug() << lmodel->getCourses()->getPathResource();
+	QString path = lmodel->getCourses()->getPathResource();
+	if(path != NULL){
+		qDebug() << path;
+		if(!QDir("depot").exists()){
+			QDir().mkdir("depot");
+		}
+		qDebug()<<lmodel->getCourses()->getNomResource();
+		if(!QFile::copy (path, "depot/"+lmodel->getCourses()->getNomResource())){
+			qDebug()<<"La copie s'est mal passée...";
+			exit(1);
+		}
 		ui->stackedWidget->setCurrentIndex(11);
 	}else{
 		ui->erreurFile->setText("Veuillez choisir un fichier");

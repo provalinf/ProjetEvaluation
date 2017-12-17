@@ -158,6 +158,10 @@ void courses::setIdCurrentCours(int id) {
 }
 
 QString courses::getPathResource(){
+	return pathCoursChoisi;
+}
+
+QString courses::getNomResource(){
 	return nomCoursChoisi;
 }
 
@@ -176,7 +180,7 @@ void courses::addResource(QString text, QDate debut, QDate fin, QString type, QS
 	QSqlQueryModel *res = new QSqlQueryModel();
 	database->open();
 	qry->prepare("INSERT INTO resources(title, descr, date_deb, date_fin, id_Course, id_Type) VALUES (:titre, :descr, :deb, :fin, :idCourse, :type)");
-	qry->bindValue(":debut", debut);
+	qry->bindValue(":deb", debut);
 	qry->bindValue(":fin", fin);
 	qry->bindValue(":type", getIdType(type));
 	qry->bindValue(":descr", descr);
@@ -200,6 +204,9 @@ int courses::getIdCurrentCours(){
 }
 
 void courses::setRessourceNameChoosing(QString nom) {
+	pathCoursChoisi = nom;
+}
+void courses::setRessourceNameChoosingBase(QString nom){
 	nomCoursChoisi = nom;
 }
 

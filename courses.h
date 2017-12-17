@@ -7,12 +7,15 @@
 class courses : public model {
 int idCurrentCours;
 QString nomCoursChoisi;
+QString pathCoursChoisi;
 public:
 	courses(QSqlDatabase *database);
 
 	~courses();
 
 	QString getPathResource();
+
+	QString getNomResource();
 
     QSqlQueryModel *getCoursById(int id);
 
@@ -43,6 +46,8 @@ public:
 	int getIdType(QString type);
 
 	void setRessourceNameChoosing(QString nom);
+
+	void setRessourceNameChoosingBase(QString nom);
 
 	void setTextForResource(QString text);
 
