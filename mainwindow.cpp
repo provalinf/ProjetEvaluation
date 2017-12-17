@@ -286,10 +286,12 @@ void MainWindow::on_pushResetText_clicked()
 
 void MainWindow::on_pushButtonAddText_clicked()
 {
+	int id = ui->tableViewCoursProf->selectionModel()->selectedRows().value(0).data().toInt();
 	lmodel->getCourses()->addResource(ui->textRessource->toPlainText(), ui->dateDebut_2->date(),
 									  ui->dateFin_2->date(), ui->comboBoxTypeRessource_2->currentText(),
-									  ui->lineEditDescriptionRessource->text(), ui->lineEditTitreRessource->text());
+									  ui->lineEditDescriptionRessource->text(), ui->lineEditTitreRessource->text(), id);
 	ui->stackedWidget->setCurrentIndex(11); // redirection sur la liste des ressources
+	ui->tableViewRessourcesProf->setModel(lmodel->getCourses()->getCoursRessources(id));
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -309,4 +311,23 @@ void MainWindow::on_pushButton_2_clicked()
 	}else if (ui->comboBoxTypeRessource_2->currentText() == " Devoir"){
 		ui->stackedWidget->setCurrentIndex(15);
 	}
+}
+
+void MainWindow::on_toolButtonChooser_2_clicked()
+{
+	QFileDialog file;
+	//file.exec();
+	QFileInfo name;
+	name = file.getOpenFileName();
+	lmodel->getCourses()->setRessourceNameChoosing(name.baseName());
+	ui->nomFichier_2->setText(name.baseName());
+	ui->nomFichier_2->setEnabled(true);
+	//qDebug() <<file.getOpenFileUrl();
+	//QFileDialog.exec();
+}
+
+void MainWindow::on_pushButtonValidFile_clicked()
+{
+	//dépend du choix de stockage
+	ui->stackedWidget->setCurrentIndex(11);
 }

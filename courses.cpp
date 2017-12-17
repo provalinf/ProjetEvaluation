@@ -166,16 +166,16 @@ int courses::getIdType(QString type){
 	return res->query().first();
 }
 
-void courses::addResource(QString text, QDate debut, QDate fin, QString type, QString descr, QString titre){
+void courses::addResource(QString text, QDate debut, QDate fin, QString type, QString descr, QString titre, int id){
 	QSqlQuery *qry = new QSqlQuery();
 	database->open();
-	qry->prepare("INSERT INTO resources VALUES (5, :titre, :descr, :deb, :fin, :idCourse, :type)"); //id auto incremente ?
+	qry->prepare("INSERT INTO resources(title, descr, date_deb, date_fin, id_Course, id_Type) VALUES (:titre, :descr, :deb, :fin, :idCourse, :type)"); //id auto incremente ?
 	qry->bindValue(":debut", debut);
 	qry->bindValue(":fin", fin);
 	qry->bindValue(":type", getIdType(type));
 	qry->bindValue(":descr", descr);
 	qry->bindValue(":titre", titre);
-	qry->bindValue(":idCourse", 3);
+	qry->bindValue(":idCourse", id);
 	qry->exec();
 
 	QSqlQuery *qry2 = new QSqlQuery();

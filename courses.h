@@ -44,7 +44,7 @@ public:
 
 	void setTextForResource(QString text);
 
-	void addResource(QString text, QDate debut,QDate fin, QString type, QString descr, QString titre);
+	void addResource(QString text, QDate debut,QDate fin, QString type, QString descr, QString titre, int id);
 
     int getIdCurrentCours();
 

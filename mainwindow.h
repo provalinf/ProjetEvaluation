@@ -84,6 +84,10 @@ class MainWindow : public QMainWindow
 
 		void on_pushButton_2_clicked();
 
+		void on_toolButtonChooser_2_clicked();
+
+		void on_pushButtonValidFile_clicked();
+
 	private:
         loadmodel *lmodel;
 		Ui::MainWindow *ui;
