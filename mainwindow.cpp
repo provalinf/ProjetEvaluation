@@ -338,3 +338,8 @@ void MainWindow::on_pushButtonValidFile_clicked()
 		ui->erreurFile->setVisible(true);
 	}
 }
+
+void MainWindow::on_return_viewRessourceProf_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
