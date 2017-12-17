@@ -331,3 +331,8 @@ void MainWindow::on_pushButtonValidFile_clicked()
 	//dépend du choix de stockage
 	ui->stackedWidget->setCurrentIndex(11);
 }
+
+void MainWindow::on_return_viewRessourceProf_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
